@@ -1,0 +1,79 @@
+<header class="page-header">
+  <div class="page-header__container">
+    <a class="page-header__logo" href="#" title="На главную страницу">
+      @@include('../svg/logo.svg')
+    </a>
+
+    <div class="page-header__search">
+      @@include('../svg/icon_search.svg')
+      <input class="page-header__field" id="search-header" type="text" name="search" placeholder="ПОИСК">
+    </div>
+  </div>
+
+  <nav class="page-header__nav">
+    <ul class="page-header__list">
+      <li class="page-header__item page-header__item--current">
+        <a class="page-header__link" href="#">ДЕНЬГИ</a>
+      </li>
+      <li class="page-header__item">
+        <a class="page-header__link" href="#">КОНТАКТЫ</a>
+      </li>
+      <li class="page-header__item page-header__item--sublist">
+        <a class="page-header__link" href="#">УСЛУГИ</a>
+        <ul class="page-header__sublist">
+          <li class="page-header__subitem">
+            <a class="page-header__link page-header__link--sublist" href="#">Подпункт 1</a>
+          </li>
+          <li class="page-header__subitem">
+            <a class="page-header__link page-header__link--sublist" href="#">Подпункт 2</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="page-header__wrapper">
+    <div class="page-header__open">
+      <button class="page-header__button-open" type="button">
+        <span class="visually-hidden">Открыть cчет</span>
+        @@include('../svg/icon_plus.svg')
+      </button>
+
+      <ul class="page-header__sublist page-header__sublist--open">
+        <li class="page-header__subitem">
+          <a class="page-header__link page-header__link--sublist" href="#">Открыть счет</a>
+        </li>
+        <li class="page-header__subitem">
+          <a class="page-header__link page-header__link--sublist" href="#">Выпустить карту</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-header__bell">
+      @@include('../svg/icon_bell.svg')
+      <span class="page-header__number">2</span>
+      
+      <ul class="page-header__sublist page-header__sublist--bell">
+        <li class="page-header__subitem">
+          <a class="page-header__link page-header__link--sublist" href="#">Уведомление 1</a>
+        </li>
+        <li class="page-header__subitem">
+          <a class="page-header__link page-header__link--sublist" href="#">Уведомление 2</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="page-header__company">
+      @@include('../svg/icon_company.svg')
+      <p class="page-header__name">ООО «РОДНЫЕ ПРОСТОРЫ»</p>
+      <ul class="page-header__sublist page-header__sublist--company">
+        <li class="page-header__subitem">
+          <a class="page-header__link page-header__link--sublist" href="#">Зайти</a>
+        </li>
+        <li class="page-header__subitem">
+          <a class="page-header__link page-header__link--sublist" href="#">Выйти</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,140 @@
+.popup {
+  position: fixed;
+  top: 60px;
+  right: 0;
+
+  width: 900px;
+  height: calc(100vh - 60px);
+
+  background-color: $white;
+  box-shadow: -8px 9px 25px rgba(49, 68, 93, 0.23112);
+
+  transition: transform 0.3s linear;
+
+  &--close {
+    transform: translateX(110%);
+  }
+}
+
+.popup__header {
+  display: flex;
+  padding-top: 15px;
+  min-height: 60px;
+
+  background-color: rgba(0, 0, 0, 0.0289572);
+}
+
+.popup__close {
+  display: block;
+  width:25px;
+  height: 25px;
+  padding: 0;
+  margin-left: 27px;
+  margin-right: 22px;
+  margin-top: 2px;
+
+  text-align: center;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.popup__svg {
+  display: block;
+  margin: 0 auto;
+  width: 15px;
+  height: 15px;
+}
+
+.popup__title {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.popup__main {
+  width: 100%;
+  height: calc(100vh - 180px);
+  padding: 25px 183px;
+  padding-right: 172px;
+
+  overflow: auto;
+}
+
+.popup__main::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.popup__main::-webkit-scrollbar-thumb {
+    width: 10px;
+    background-color: rgba(0, 0, 0, 0.09);
+    border-radius: 100px;
+}
+
+.popup__footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 900px;
+  padding: 0 190px;
+  padding-right: 190px;
+
+  background-color: $white;
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.239102), 
+              0px 0px 15px rgba(0, 0, 0, 0.0869282);
+}
+
+.popup__button {
+  display: flex;
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  height: 20px;
+
+  font-size: 14px;
+  line-height: 16px;
+  
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  &:hover {
+    color: $green;
+  }
+
+  &:hover .popup__icon--favorite {
+    transform: scale(1.4);
+  }
+
+  &:hover .popup__icon--repeat {
+    transform: rotate(360deg);
+  }
+
+  &:hover .popup__icon--more {
+    transform: rotate(360deg);
+  }
+
+  &:hover .popup__icon--chat {
+    transform: translateX(10px);
+  }
+}
+
+.popup__icon {
+  margin-right: 10px;
+
+  transition: all 0.3s linear;
+
+  &--more {
+    height: 20px;
+  }
+}

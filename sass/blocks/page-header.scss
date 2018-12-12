@@ -1,0 +1,330 @@
+.page-header {
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 10;
+
+  display: flex;
+  height: 60px;
+  min-width: 1024px;
+  width: 100%;
+
+  background: $header-linear-gradient;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.159392);
+}
+
+.page-header__svg {
+  display: block;
+
+  &--logo path {
+    fill: $bank-blue;
+  }
+
+  &--search {
+    margin-right: 10px;
+
+    fill: $black;
+  }
+
+  &--plus path {
+    fill: $white;
+  }
+
+  &--bell path {
+    fill: $white;
+  }
+
+  &--company {
+    margin-right: 10px;
+  }
+
+  &--company path {
+    fill: $white;
+  }
+}
+
+
+.page-header__container {
+  display: flex;
+  align-items: center;
+  margin-right: 70px;
+  padding-left: 20px; 
+
+  background-color: $white;
+
+  &:after {
+    content: '';
+
+    display: block;
+    height: 100%;
+    margin-right: -12px;
+
+    border-left: 12px solid $white;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+  }
+}
+
+.page-header__logo {
+  display: block;
+  margin-right: 27px;
+}
+
+.page-header__search {
+  display: flex;
+  align-items: center;
+}
+
+.page-header__field {
+  width: 56px;
+  margin-right: 10px;
+
+  font-size: 14px;
+  line-height: normal;
+  font-weight: 400;
+
+  border: none;
+  border-bottom: 1px solid transparent;
+
+  transition: width 0.3s linear;
+
+  &:hover,
+  &:focus {
+    width: 150px;
+
+    border-bottom: 1px solid $black;
+    outline: none;
+  }
+}
+
+.page-header__field::-webkit-input-placeholder {
+  color: $black;
+  text-transform: uppercase;
+}
+
+.page-header__field::-moz-placeholder {
+  color: $black;
+  text-transform: uppercase;
+}
+
+
+.page-header__nav {
+  margin-right: auto;
+}
+
+.page-header__list {
+  @include list-style-none;
+
+  display: flex;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.page-header__sublist {
+  @include list-style-none;
+
+  position: absolute;
+
+  display: none;
+
+  background: $header-sublist-linear-gradient;
+}
+
+.page-header__item {
+  position: relative;
+
+  margin-right: 36px;
+
+  &--current {
+    border-bottom: 5px solid $green;
+  }
+
+  &--current .page-header__link {
+    opacity: 1;
+  }
+
+  &--sublist::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    
+    display: block;
+    width: 5px;
+    height: 5px;
+
+    border-bottom: 1px solid $white;
+    border-left: 1px solid $white;
+
+    transform: translateY(-100%) rotate(-45deg);
+  }
+
+  &:hover .page-header__sublist {
+    display: block;
+  }
+
+  &--sublist:hover::after {
+    border-color: $green;
+  }
+}
+
+.page-header__link {
+  display: block;
+  height: 100%;
+  padding-top: 21px;
+
+  color: $white;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: normal;
+
+  opacity: 0.8;
+
+  &--sublist {
+    height: auto;
+    min-width: 120px;
+    padding: 10px;
+
+    text-align: center;
+
+    opacity: 0.8;
+  }
+
+  &:hover {
+    color: $green;
+  }
+
+  &:active {
+    color: $dark-green;
+  }
+}
+
+.page-header__wrapper {
+  display: flex;
+  width: 50%;
+}
+
+.page-header__open {
+  height: 100%;
+  margin-right: auto;
+
+  transform: translateX(-50%);
+
+  cursor: pointer;
+
+  &:hover .page-header__button-open {
+    transform: rotate(45deg);
+  }
+
+  &:hover .page-header__sublist--open {
+    top: 60px;
+
+    display: block;
+
+    width: 200px;
+
+    transform: translateX(-30%);
+  }
+}
+
+.page-header__button-open {
+  margin-top: 9px;
+
+  border: none;
+  background-color: transparent;
+
+  transition: transform 0.1s linear;
+}
+
+.page-header__bell {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  margin-right: 22px;
+  padding: 10px 20px;
+  
+  cursor: pointer;
+
+  &:hover .page-header__number {
+    transform: scale(1.5);
+  }
+
+  &:hover .page-header__sublist {
+    display: block;
+  }
+}
+
+.page-header__number {
+  position: absolute;
+  top: 14px;
+  right: 13px;
+
+  display: inline-block;
+  height: 18px;
+  min-width: 18px;
+
+  color: $white;
+  font-size: 10px;
+  line-height: 15px;
+  text-align: center;
+
+  border-radius: 50%;
+  border: 2px solid #37AEC1;
+  background-color: $red;
+
+  transition: transform 0.3s linear;
+}
+
+.page-header__company {
+  display: flex;
+  align-items: center;
+  margin-right: 32px;
+  margin-left: 6px;
+
+  &:hover .page-header__svg--company path {
+    fill: $green;
+  }
+
+  &:hover .page-header__sublist--company {
+    top: 60px;
+    right: 0px;
+
+    display: block;
+    min-width: 200px;
+  }
+}
+
+.page-header__name {
+  position: relative;
+
+  color: $white;
+  font-size: 14px;
+  line-height: normal;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    top: 50%;
+    right: -14px;
+    
+    display: block;
+    width: 5px;
+    height: 5px;
+
+    border-bottom: 1px solid $white;
+    border-left: 1px solid $white;
+
+    transform: translateY(-100%) rotate(-45deg);
+  }
+}
+
+.page-header__sublist--bell {
+  top: 60px;
+
+  width: 200px;
+
+  transform: translateX(-45%);
+}

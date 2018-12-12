@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src:  local("Roboto"),
+        url("../fonts/Roboto.woff") format("woff"),
+        url("../fonts/Roboto.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src:  local("Robotolight"),
+        local("Roboto-light"),
+        url("../fonts/Robotolight.woff") format("woff"),
+        url("../fonts/Robotolight.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src:  local("RobotoMedium"),
+        local("Roboto-Medium"),
+        url("../fonts/Robotomedium.woff") format("woff"),
+        url("../fonts/Robotomedium.woff2") format("woff2");
+}
+
+*, *::before, *::after {
+box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button:active, button:focus {
+  outline: none !important;
+}
+
+button::-moz-focus-inner {
+  border: 0 !important;
+}

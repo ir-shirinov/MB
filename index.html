@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Модуль Банк</title>
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+
+  <body class="page-body">
+    @@include('./parthtml/header.html')
+    <h1 class="page-body__title">Личный кабинет</h1>
+
+    <section class="popup" id="popup-payment">
+      <header class="popup__header">
+        <button class="popup__close" id="popup-close">
+          @@include('./svg/icon_close.svg')
+          <span class="visually-hidden">Закрыть окно</span>
+        </button>
+        <h2 class="popup__title">Платежное поручение № 5241234 от 23.09.2015</h2>
+      </header>
+
+      <div class="popup__main payment">
+        <span class="payment__amount payment__amount--minus">– 23 500,00 ₽</span>
+        <p class="payment__account">
+          со счета:
+          <span class="payment__account-number">Расчетный счет (***012345)</span>
+        </p>
+        <p class="payment__status payment__status--ok">
+          ИСПОЛНЕН,
+          <time class="payment__date" datetime="2018-06-21T15:33:00+04:00"> 21 июня 15:33</time>
+        </p>
+
+        <div class="payment__wrapper">
+          <div class="payment__container">
+            <div class="payment__left">
+              <span class="payment__company">ООО "Родные просторы"</span>
+              <span class="payment_details">ИНН: 22341497819132</span>
+              <span class="payment_details">Банк: ОАО Сбербанк</span>
+              <span class="payment_details">БИК: 2352362365</span>
+              <span class="payment_details">Счет: 40802810970010000395</span>
+            </div>
+
+            <div class="payment__right">
+              <div class="payment__evaluation">
+                <div class="payment__text">
+                  <span class="payment__blue">Высокая финансовая устойчивость</span>
+                </div>
+                <div class="payment__circle" data-value='0.88'>
+                  <span class="payment__value">88</span>
+                </div>
+              </div>
+              <div class="payment__evaluation">
+                <div class="payment__text">
+                  <span class="payment__blue">Высокая благонадежность</span>
+                </div>
+                <div class="payment__circle" data-value='1'>
+                  <span class="payment__value">100</span>
+                </div>
+              </div>
+              <div class="payment__evaluation">
+                <div class="payment__text">
+                  <span class="payment__blue">Кредитоспрособность 44.5 млрд ₽</span>
+                </div>
+                <span class="payment__round">1 <span class="payment__small">Класс</span></span>
+              </div>
+            </div>
+          </div>
+
+          <p class="payment__description">Оплата за партию ромашек и одуванчиков по договору 14023-023 от 14.05.2015 г. Сумма 11430-00. В том числе НДС 18% - 1450,00 ₽</p>
+        </div>
+
+        <p class="payment__commission">
+          Комиссия банка: 70 р.<br>Размер комиссии рассчитан автоматически согласно тарифу вашей компании и является ознакомительным. Точный размер комиссии определяется после передачи платежного документа на обработку в банк.
+        </p>
+      </div>
+
+      <footer class="popup__footer">
+        <button class="popup__button">
+          @@include('./svg/icon_repeat.svg')
+          Повторить
+        </button>
+        <button class="popup__button">
+          @@include('./svg/icon_favorite.svg')
+          В избранное
+        </button>
+        <button class="popup__button">
+          @@include('./svg/icon_chat.svg')
+          Спросить
+        </button>
+        <button class="popup__button">
+          @@include('./svg/icon_more.svg')
+          Действия
+        </button>
+      </footer>
+    </section>
+
+    <button class="page-body__button" id="return">Верни меня</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="js/circle.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
